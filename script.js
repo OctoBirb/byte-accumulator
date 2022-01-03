@@ -38,7 +38,6 @@ function load() {
 window.setInterval(function() {
 	r("xDis", `You have ${x} bytes. (0 KB)`)
  	draw()
- 	x++
 }, 20)
 
 window.setInterval(function() {
