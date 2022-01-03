@@ -16,7 +16,7 @@ var cl = (x) => { // useful for anything
 function draw() {
 if (canvas.getContext) {
 	var ctx = canvas.getContext('2d');
-	ctx.fillStyle = 'rgb(255, 255, 255)'
+	ctx.fillStyle = 'rgb(0, 255, 0)'
 	ctx.fillRect(75 - Math.log(x) / 2, 75 - Math.log(x) / 2, Math.log(x), Math.log(x))
 }}
 
