@@ -22,16 +22,18 @@ if (canvas.getContext) {
 
 function ix() { x++ }
 
-var save = {
-	x: x,
-	xps: xps
+
+function save() {
+	var save = {
+		x: x,
+		xps: xps
+	}
+	localStorage.setItem("save",JSON.stringify(save));
 }
-function saveload() {
-	localStorage.setItem("save", JSON.stringify(save))
-	var saveL = JSON.parse(localStorage.getItem("save"));
-	x = saveL.x
-	xps = saveL.xps
-	r("sDis", `${saveL}`)
+function load() {
+	var savegame = JSON.parse(localStorage.getItem("save"));
+	x = savegame.x
+	xps = savegame.xps
 }
 
 window.setInterval(function() {
@@ -40,5 +42,5 @@ window.setInterval(function() {
 }, 20)
 
 window.setInterval(function() {
-	saveload()
+	save()
 }, 15000)
