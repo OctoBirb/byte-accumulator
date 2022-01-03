@@ -5,7 +5,9 @@ var canvas = document.getElementById('xVis');
 if (canvas.getContext) {
 	var ctx = canvas.getContext('2d');
 	ctx.fillStyle = 'rgb(255, 255, 255)'
-	ctx.fillRect(25, 25, 100, 100)
+	while (x < 1e100) {
+		ctx.fillRect(25, 25, log(x), log(x))
+	}
 }
 
 function ix() { x++ }
@@ -15,17 +17,17 @@ window.setInterval(function() {
 }, 20)
 
 var save = {
-    x: x
-    xps: xps
+	x: x
+    	xps: xps
 }
 function save() {
-    localStorage.setItem("save", JSON.stringify(save))
+    	localStorage.setItem("save", JSON.stringify(save))
 }
 function load() {
-    var saveL = JSON.parse(localStorage.getItem("save"));
-    x = savegame.x
-    xps = savegame.xps
+    	var saveL = JSON.parse(localStorage.getItem("save"));
+    	x = savegame.x
+    	xps = savegame.xps
 }
 window.setInterval(function() {
-    save()
+    	save()
 }, 15000)
