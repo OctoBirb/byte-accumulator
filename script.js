@@ -1,4 +1,4 @@
-var x = 10
+var x = 1e50
 var xps = 0
 var canvas = document.getElementById('xVis');
   
@@ -17,13 +17,13 @@ function draw() {
 if (canvas.getContext) {
 	var ctx = canvas.getContext('2d');
 	ctx.fillStyle = 'rgb(255, 255, 255)'
-	ctx.fillRect(25, 25, Math.log(x), Math.log(x))
+	ctx.fillRect(75 - Math.log(x) / 2, 75 - Math.log(x) / 2, Math.log(x), Math.log(x))
 }}
 
 function ix() { x++ }
 
 var save = {
-	x: x,
+x: x,
     xps: xps
 }
 function save() {
@@ -37,8 +37,8 @@ function load() {
 
 window.setInterval(function() {
 	r("xDis", `You have ${x} bytes. (0 KB)`)
-	draw()
-	x++
+ 	draw()
+ 	x++
 }, 20)
 
 window.setInterval(function() {
