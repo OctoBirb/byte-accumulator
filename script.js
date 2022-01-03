@@ -1,4 +1,4 @@
-var x = 1e50
+var x = 10
 var xps = 0
 var canvas = document.getElementById('xVis');
   
@@ -23,16 +23,16 @@ if (canvas.getContext) {
 function ix() { x++ }
 
 var save = {
-x: x,
-    xps: xps
+	x: x,
+	xps: xps
 }
 function save() {
-    localStorage.setItem("save", JSON.stringify(save))
+	localStorage.setItem("save", JSON.stringify(save))
 }
 function load() {
-    var saveL = JSON.parse(localStorage.getItem("save"));
-    x = savegame.x
-    xps = savegame.xps
+	var saveL = JSON.parse(localStorage.getItem("save"));
+	x = savegame.x
+	xps = savegame.xps
 }
 
 window.setInterval(function() {
