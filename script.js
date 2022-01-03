@@ -29,9 +29,9 @@ var save = {
 function saveload() {
 	localStorage.setItem("save", JSON.stringify(save))
 	var saveL = JSON.parse(localStorage.getItem("save"));
-	x = savegame.x
-	xps = savegame.xps
-	r("sDis", `${savegame}`)
+	x = saveL.x
+	xps = saveL.xps
+	r("sDis", `${saveL}`)
 }
 
 window.setInterval(function() {
