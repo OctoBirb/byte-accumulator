@@ -17,17 +17,17 @@ window.setInterval(function() {
 }, 20)
 
 var save = {
-	x: x
-    	xps: xps
+	x: x,
+    xps: xps
 }
 function save() {
-    	localStorage.setItem("save", JSON.stringify(save))
+    localStorage.setItem("save", JSON.stringify(save))
 }
 function load() {
-    	var saveL = JSON.parse(localStorage.getItem("save"));
-    	x = savegame.x
-    	xps = savegame.xps
+    var saveL = JSON.parse(localStorage.getItem("save"));
+    x = savegame.x
+    xps = savegame.xps
 }
 window.setInterval(function() {
-    	save()
+    save()
 }, 15000)
